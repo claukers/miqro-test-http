@@ -1,0 +1,30 @@
+{
+  "name": "@miqro/test-http",
+  "version": "0.0.1",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "prepare": "npm run build",
+    "prebuild": "rm -Rf dist/;",
+    "build": "tsc",
+    "pretest": "npm run build",
+    "test": "LOG_LEVEL=debug NODE_ENV=test npx miqro-test -r src/ test/*.test.js -n ",
+    "test:unit": "LOG_LEVEL=debug NODE_ENV=test npx miqro-test -r src/ -n ",
+    "test:func": "LOG_LEVEL=debug NODE_ENV=test npx miqro-test test/*.test.js -n "
+  },
+  "author": "claukers",
+  "license": "ISC",
+  "devDependencies": {
+    "@miqro/test": "../test",
+    "@types/node": "17.0.23",
+    "typescript": "4.6.3"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=6.0.0"
+  },
+  "dependencies": {
+    "@miqro/request": "^0.0.7"
+  }
+}
