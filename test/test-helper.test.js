@@ -9,6 +9,7 @@ describe("TestHelper func tests", () => {
         console.dir(req.url);
         strictEqual(req.url, "/hello");
         strictEqual(req.method, "POST");
+        res.setHeader("content-type", "plain/text");
         res.statusCode = 200;
         res.end(String("world!"));
       } catch (e) {
